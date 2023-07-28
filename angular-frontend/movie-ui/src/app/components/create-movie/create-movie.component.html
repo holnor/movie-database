@@ -1,0 +1,64 @@
+<h1>Create Movie</h1>
+
+<div class="form-control">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" placeholder="title">
+  </div>
+  <div class="mb-3">
+    <label for="director" class="form-label">Director</label>
+    <input type="text" class="form-control" id="director" placeholder="director">
+  </div>
+  <div class="mb-3">
+    <label for="year" class="form-label">Release Year</label>
+    <input type="number" class="form-control" id="year" placeholder="Release Year">
+  </div>
+<div class="mb-3">
+  <label for="genre" class="form-label">Choose Genre</label>
+  <select class="form-select" id="genre" multiple aria-label="Multiple select example">
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+
+<div class="mb-3">
+  <label class="form-label">Rating</label>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="g">
+    <label class="form-check-label" for="g">
+      G - General
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="pg">
+    <label class="form-check-label" for="pg">
+      PG
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="pg13">
+    <label class="form-check-label" for="pg13">
+      PG13
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="r">
+    <label class="form-check-label" for="r">
+      R
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="nc17">
+    <label class="form-check-label" for="nc17">
+      NC-17
+    </label>
+  </div>
+</div>
+  <div class="mb-3">
+    <label for="poster" class="form-label">Poster URL</label>
+    <input type="text" class="form-control" id="poster" placeholder="Enter poster URL">
+  </div>
+</div>
+<button class="btn btn-success mt-3">Submit</button>
