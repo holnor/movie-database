@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Movie} from "../../models/movie";
 import {MovieService} from "../../services/movie.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-movie-list',
@@ -8,6 +9,20 @@ import {MovieService} from "../../services/movie.service";
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent {
-  movies!: Movie[];
-  constructor(private movieService: MovieService) {}
+  movies: Movie[] = [];
+  isFetching = false;
+
+  constructor(private movieService: MovieService, private router: Router) {}
+
+  ngOnInit() {
+    this.isFetching = true;
+    this.movieService.getAllMovies().subscribe(response => {
+      this.movies = response;
+      this.isFetching = false;
+    });
+  }
+
+  openMovieDetails(movieId: number | undefined) { //Ilyet ne csináljunk! Helyette Partial<T> a ? helyette a modellben
+    this.router.navigate(['/movie-details', movieId]);
+  }
 }

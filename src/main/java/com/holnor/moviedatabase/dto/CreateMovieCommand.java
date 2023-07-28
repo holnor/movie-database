@@ -1,39 +1,20 @@
-package com.holnor.moviedatabase.domain;
+package com.holnor.moviedatabase.dto;
 
-import jakarta.persistence.*;
+public class CreateMovieCommand {
 
-@Entity
-@Table(name = "movie")
-public class Movie {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "movie_id")
-    private Long id;
-
-    @Column(name = "title")
     private String title;
 
-    @Column(name = "director")
     private String director;
 
-    @Column(name = "year")
     private String year;
 
-    public Movie() {
+    public CreateMovieCommand() {
     }
 
-    public Movie(String title, String director, String year) {
+    public CreateMovieCommand(String title, String director, String year) {
         this.title = title;
         this.director = director;
         this.year = year;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {
