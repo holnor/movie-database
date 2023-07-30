@@ -1,6 +1,5 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
 import {Movie} from "../models/movie";
 
 @Injectable({
@@ -8,9 +7,10 @@ import {Movie} from "../models/movie";
 })
 export class MovieService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-  getAllMovies(){
+  getAllMovies() {
     return this.http.get<Movie[]>('http://localhost:8080/api/movies');
   }
 
@@ -18,7 +18,11 @@ export class MovieService {
     return this.http.post<Movie>('http://localhost:8080/api/movies', movie, {observe: 'response'});
   }
 
-  getMovieDetails(id:number | undefined){
+  getMovieDetails(id: number | undefined) {
     return this.http.get<Movie>(`http://localhost:8080/api/movies/${id}`)
+  }
+
+  deleteMovie(id: number | undefined) {
+    return this.http.delete<Movie>(`http://localhost:8080/api/movies/${id}`)
   }
 }

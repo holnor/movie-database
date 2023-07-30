@@ -33,13 +33,21 @@ public class MovieService {
                 movie.getDirector(),
                 movie.getYear()
         );
+        System.out.println("created");
         return movieRepository.save(movieToSave);
     }
 
     public MovieDetail getMovieDetail(Long id) {
         Movie movie = movieRepository.findById(id).orElseThrow(()-> new EntityNotFoundException());
+        System.out.println("loaded");
         return new MovieDetail(movie);
 
 
+    }
+
+    public void deleteMovie(Long id) {
+        System.out.println("service reached");
+        movieRepository.deleteById(id);
+        System.out.println("deleted");
     }
 }

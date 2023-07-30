@@ -25,4 +25,10 @@ export class MovieListComponent {
   openMovieDetails(movieId: number | undefined) { //Ilyet ne csináljunk! Helyette Partial<T> a ? helyette a modellben
     this.router.navigate(['/movie-details', movieId]);
   }
+
+  deleteMovie(id: number | undefined) {
+    this.movieService.deleteMovie(id).subscribe(response =>{
+      console.log(response)
+    })
+  }
 }
