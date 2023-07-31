@@ -40,10 +40,9 @@ public class AuthenticationService {
                         request.getPassword()
                 )
         );
-        var user = userRepository.findByUsername(request.getUsername()).orElseThrow();
-        var token = jwtService.generateToken(user);
+        User user = userRepository.findByUsername(request.getUsername()).orElseThrow(); //TODO: handle exception
         return AuthenticationResponse.builder()
-                .token(token)
+                .token(jwtService.generateToken(user))
                 .build();
     }
 }
