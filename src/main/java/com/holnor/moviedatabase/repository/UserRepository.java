@@ -1,7 +1,7 @@
 package com.holnor.moviedatabase.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.security.core.userdetails.User;
+import com.holnor.moviedatabase.domain.User;
 
 import java.util.Optional;
 
