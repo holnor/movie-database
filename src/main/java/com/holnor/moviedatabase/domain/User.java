@@ -3,6 +3,7 @@ package com.holnor.moviedatabase.domain;
 import com.holnor.moviedatabase.security.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,18 +17,18 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "user")
+@Builder
+@Table(name = "users")
 public class User implements UserDetails {
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
     private String firstName;
     private String lastName;
+    private String username;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -51,6 +52,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
