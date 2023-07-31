@@ -1,6 +1,6 @@
 package com.holnor.moviedatabase.security.auth;
 
-import com.holnor.moviedatabase.security.Role;
+import com.holnor.moviedatabase.security.user.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

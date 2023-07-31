@@ -1,6 +1,6 @@
 package com.holnor.moviedatabase.domain;
 
-import com.holnor.moviedatabase.security.Role;
+import com.holnor.moviedatabase.security.user.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

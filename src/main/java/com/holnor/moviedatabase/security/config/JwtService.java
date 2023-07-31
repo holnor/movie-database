@@ -1,4 +1,4 @@
-package com.holnor.moviedatabase.security;
+package com.holnor.moviedatabase.security.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

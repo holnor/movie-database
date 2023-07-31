@@ -1,7 +1,7 @@
 package com.holnor.moviedatabase.security.auth;
 
 import com.holnor.moviedatabase.repository.UserRepository;
-import com.holnor.moviedatabase.security.JwtService;
+import com.holnor.moviedatabase.security.config.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

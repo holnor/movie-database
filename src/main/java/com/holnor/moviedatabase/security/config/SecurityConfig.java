@@ -1,5 +1,6 @@
-package com.holnor.moviedatabase.security;
+package com.holnor.moviedatabase.security.config;
 
+import com.holnor.moviedatabase.security.config.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
