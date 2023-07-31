@@ -1,4 +1,4 @@
-package com.holnor.moviedatabase.security;
+package com.holnor.moviedatabase.security.config;
 
 import com.holnor.moviedatabase.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
