@@ -2,13 +2,12 @@ package com.holnor.moviedatabase.security.auth;
 
 import com.holnor.moviedatabase.repository.UserRepository;
 import com.holnor.moviedatabase.security.JwtService;
-import com.holnor.moviedatabase.security.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.holnor.moviedatabase.domain.User;
 
 @Service
 @RequiredArgsConstructor
@@ -24,14 +23,12 @@ public class AuthenticationService {
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
                 .email(request.getEmail())
-                .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.USER)
+                .role(request.getRole())
                 .build();
         userRepository.save(user);
-        var token = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
-                .token(token)
+                .token(jwtService.generateToken(user))
                 .build();
     }
 
