@@ -9,6 +9,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CreateMovieComponent } from './components/create-movie/create-movie.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { LoginComponent } from './components/login/login/login.component';
+import { RegisterComponent } from './components/register/register/register.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     MovieListComponent,
     MovieDetailsComponent,
     NavbarComponent,
-    CreateMovieComponent
+    CreateMovieComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
